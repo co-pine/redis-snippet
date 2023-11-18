@@ -1,0 +1,32 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: hmdp
+  # MySQL 本地测试环境
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/hmdp
+    username: root
+    password: Yuyuanyuyuan9
+  redis:
+    database: 10
+    host: 127.0.0.1
+    port: 6379
+    timeout: 5000
+    password: Yuyuanyuyuan9
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 1
+        time-between-eviction-runs: 10s
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+mybatis-plus:
+  type-aliases-package: com.hmdp.entity # 别名扫描包
+logging:
+  level:
+    com.hmdp: debug
+  pattern:
+    dateformat: mm:ss.SSS
